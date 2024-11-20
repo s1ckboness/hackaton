@@ -28,4 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Limpiar el formulario
         event.target.reset();
     });
+
+    // Evento para borrar los datos guardados
+    document.getElementById('clearStorage').addEventListener('click', function() {
+        localStorage.removeItem('donations');
+        alert('Datos de donaciones borrados.');
+    });
 });
