@@ -27,18 +27,12 @@
             
             <label for="nacimiento">Fecha de nacimiento:</label>
             <input type="date" id="nacimiento" name="nacimiento" required>
-            
-            <h2>Información de Donación</h2>
-            <label for="monto">Monto de la donación:</label>
-            <input type="number" id="monto" name="monto" required>
-            
-            <label for="frecuencia">Frecuencia de la donación:</label>
-            <select id="frecuencia" name="frecuencia" required>
-                <option value="unica">Única</option>
-                <option value="mensual">Mensual</option>
-                <option value="anual">Anual</option>
-            </select>
-            
+
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" required>
+            <div id="passwordError" class="error"></div>
+
+            <h2>Información Bancaria</h2>
             <label for="metodo">Método de pago:</label>
             <select id="metodo" name="metodo" required>
                 <option value="tarjeta">Tarjeta de crédito</option>
@@ -49,20 +43,17 @@
             <label for="mensaje">Mensaje al beneficiario:</label>
             <textarea id="mensaje" name="mensaje" rows="4"></textarea>
             
-            <label>
-                <input type="checkbox" id="anonimo" name="anonimo">
-                ¿Desea que su donación sea anónima?
-            </label>
-            
-            <label>
-                <input type="checkbox" id="boletin" name="boletin">
-                ¿Desea recibir actualizaciones y noticias?
-            </label>
+            <label for="frecuencia">Frecuencia de la donación:</label>
+            <select id="frecuencia" name="frecuencia" required>
+                <option value="unica">Única</option>
+                <option value="mensual">Mensual</option>
+                <option value="anual">Anual</option>
+            </select>
             
             <button type="submit">Enviar</button>
         </form>
         <div id="result"></div>
-        <button id="clearStorage">Borrar Datos Guardados</button> <!-- Nuevo botón para borrar datos -->
+        <button id="clearStorage">Borrar Datos Guardados</button>
     </div>
     <script src="script.js"></script>
 </body>

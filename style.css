@@ -48,6 +48,7 @@ input[type="email"],
 input[type="tel"],
 input[type="date"],
 input[type="number"],
+input[type="password"],
 select,
 textarea {
     width: 100%;
@@ -83,4 +84,16 @@ button {
 
 button:hover {
     background-color: #45a049;
+}
+
+.error {
+    color: red;
+    margin-top: 10px;
+    display: none;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #333;
 }
