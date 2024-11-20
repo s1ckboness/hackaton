@@ -187,15 +187,19 @@ h1 {
     cursor: pointer;
 }
 
-/* Estilos del mensaje de contacto */
-.contact-message {
-    position: fixed;
-    top: 50px;
-    right: 50px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+/* Estilos de la sección de contacto */
+.contact-section {
+    padding: 50px 0;
+}
+
+.contact-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
 /* Estilos responsivos */

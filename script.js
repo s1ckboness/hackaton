@@ -24,24 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
         donationModal.style.display = 'none';
     });
 
-    // Función para mostrar el mensaje de contacto en una nueva pestaña
+    // Función para redirigir a la sección de contacto
     contactLink.addEventListener('click', (e) => {
         e.preventDefault();
-        const newWindow = window.open('', '_blank');
-        newWindow.document.write(`
-            <html>
-                <head>
-                    <title>Contactar</title>
-                    <link rel="stylesheet" href="styles.css">
-                </head>
-                <body>
-                    <div id="contactMessage" class="contact-message">
-                        <p>Puedes contactarnos al: 310 6718480 o por correo electrónico a: <a href="mailto:juandavidpenuelaperez24@gmail.com">juandavidpenuelaperez24@gmail.com</a></p>
-                    </div>
-                </body>
-            </html>
-        `);
-        newWindow.document.close();
+        const contactSection = document.getElementById('contactanos');
+        contactSection.scrollIntoView({ behavior: 'smooth' });
     });
 
     // Función para actualizar la selección de frecuencia
