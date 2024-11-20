@@ -25,9 +25,22 @@ document.addEventListener('DOMContentLoaded', () => {
         donationModal.style.display = 'none';
     });
 
-    // Función para mostrar el mensaje de contacto
+    // Función para mostrar el mensaje de contacto en una nueva pestaña
     contactLink.addEventListener('click', () => {
-        alert("Puedes contactarnos al: 310 6718480 o por correo electrónico a: juandavidpenuelaperez24@gmail.com");
+        const newWindow = window.open();
+        newWindow.document.write(`
+            <html>
+                <head>
+                    <title>Contactar</title>
+                    <link rel="stylesheet" href="styles.css">
+                </head>
+                <body>
+                    <div id="contactMessage" class="contact-message">
+                        <p>Puedes contactarnos al: 310 6718480 o por correo electrónico a: <a href="mailto:juandavidpenuelaperez24@gmail.com">juandavidpenuelaperez24@gmail.com</a></p>
+                    </div>
+                </body>
+            </html>
+        `);
     });
 
     // Función para actualizar la selección de frecuencia
@@ -61,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         selectedAmount = customAmountInput.value;
     });
 
-    // Event listener para el botón "Next"
+    // Event listener para el botón "Siguiente"
     nextButton.addEventListener('click', () => {
         const currency = currencySelect.value;
         const comment = commentCheckbox.checked ? 'Sí' : 'No';
@@ -89,7 +102,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const buttons = document.querySelectorAll('.frequency-select button, .amount-buttons button');
         buttons.forEach(button => {
             button.addEventListener('click', function() {
-                buttons.forEach(btn => btn.classList.remove('selected'));
+                if (button.parentElement.classList.contains('frequency-select')) {
+                    frequencyButtons.forEach(btn => btn.classList.remove('selected'));
+                } else {
+                    amountButtons.forEach(btn => btn.classList.remove('selected'));
+                }
                 this.classList.add('selected');
             });
         });

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Donantes</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Barra de navegación -->
@@ -14,7 +14,7 @@
             <div class="nav-links">
                 <a href="#" id="homeLink">INICIO</a>
                 <a href="#" id="aboutLink">ACERCA DE</a>
-                <a href="#" id="contactLink">CONTACTANOS</a>
+                <a href="#" id="contactLink" target="_blank">CONTACTANOS</a>
                 <a href="#" id="servicesLink">SERVICIOS</a>
                 <button class="donate-btn" id="donateBtn">DONAR</button>
             </div>
@@ -26,7 +26,7 @@
         <div class="container content">
             <!-- Columna izquierda con imagen -->
             <div class="left-column">
-                <img src="nigga.jfif" alt="Imagen de donación" style="width: 100%; border-radius: 10px;">
+                <img src="tu-imagen.jpg" alt="Imagen de donación" style="width: 100%; border-radius: 10px;">
                 <h1>DONAR A CAUSA VIVA</h1>
                 <p>Tu donación deducible de impuestos salva vidas y ayuda a construir un mundo donde nadie muera esperando atención médica. Para preguntas sobre cómo apoyar a Causa Viva, por favor contáctanos.</p>
             </div>
@@ -58,7 +58,7 @@
                         <button type="button">$200</button>
                     </div>
                     <div class="custom-amount">
-                        <input type="number" id="custom-amount" placeholder="Cantidad personalizada">
+                        <input type="number" id="custom-amount" placeholder="Monto personalizado">
                     </div>
                     <div class="currency-select">
                         <select>
@@ -68,15 +68,20 @@
                     </div>
                     <div class="comment-checkbox">
                         <input type="checkbox" id="comments">
-                        <label for="comments">Me gustaría dejar un comentario</label>
+                        <label for="comments">Quiero dejar un comentario</label>
                     </div>
                     <button type="button" class="next-btn">Siguiente</button>
                 </form>
-                <div class="powered-by">Con el apoyo de Causa Viva</div>
+                <div class="powered-by">Desarrollado por Causa Viva</div>
             </div>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Contenedor del mensaje de contacto -->
+    <div id="contactMessage" class="contact-message" style="display: none;">
+        <p>Puedes contactarnos al: 310 6718480 o por correo electrónico a: <a href="mailto:juandavidpenuelaperez24@gmail.com">juandavidpenuelaperez24@gmail.com</a></p>
+    </div>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
