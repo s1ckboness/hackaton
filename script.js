@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('donationForm').addEventListener('submit', function(event) {
         event.preventDefault(); // Evita que se envíe el formulario automáticamente
         
+        // Validación de la contraseña
         const password = document.getElementById('password').value;
         const passwordError = document.getElementById('passwordError');
 
@@ -24,12 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         donations.push(data);
         localStorage.setItem('donations', JSON.stringify(donations));
 
-        const resultElement = document.getElementById('result');
-        if (resultElement) {
-            resultElement.innerText = '¡Gracias por tu donación!';
-        } else {
-            console.error('Elemento con id "result" no encontrado');
-        }
+        alert('¡Gracias por tu donación!');
 
         event.target.reset();
     });
