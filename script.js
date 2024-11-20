@@ -1,4 +1,3 @@
-// scripts.js
 document.addEventListener('DOMContentLoaded', () => {
     const donateBtn = document.getElementById('donateBtn');
     const donationModal = document.getElementById('donationModal');
@@ -14,31 +13,26 @@ document.addEventListener('DOMContentLoaded', () => {
     let selectedFrequency = null;
     let selectedAmount = null;
 
-    // Función para abrir el modal de donación
     donateBtn.addEventListener('click', () => {
         donationModal.style.display = 'block';
     });
 
-    // Función para cerrar el modal de donación
     closeBtn.addEventListener('click', () => {
         donationModal.style.display = 'none';
     });
 
-    // Función para redirigir a la sección de contacto
     contactLink.addEventListener('click', (e) => {
         e.preventDefault();
         const contactSection = document.getElementById('contactanos');
         contactSection.scrollIntoView({ behavior: 'smooth' });
     });
 
-    // Función para actualizar la selección de frecuencia
     function updateFrequencySelection(button) {
         frequencyButtons.forEach(btn => btn.classList.remove('selected'));
         button.classList.add('selected');
         selectedFrequency = button.textContent;
     }
 
-    // Función para actualizar la selección de cantidad
     function updateAmountSelection(button) {
         amountButtons.forEach(btn => btn.classList.remove('selected'));
         button.classList.add('selected');
@@ -46,23 +40,19 @@ document.addEventListener('DOMContentLoaded', () => {
         customAmountInput.value = '';
     }
 
-    // Event listeners para los botones de frecuencia
     frequencyButtons.forEach(button => {
         button.addEventListener('click', () => updateFrequencySelection(button));
     });
 
-    // Event listeners para los botones de cantidad
     amountButtons.forEach(button => {
         button.addEventListener('click', () => updateAmountSelection(button));
     });
 
-    // Event listener para el input de cantidad personalizada
     customAmountInput.addEventListener('input', () => {
         amountButtons.forEach(btn => btn.classList.remove('selected'));
         selectedAmount = customAmountInput.value;
     });
 
-    // Event listener para el botón "Siguiente"
     nextButton.addEventListener('click', () => {
         const currency = currencySelect.value;
         const comment = commentCheckbox.checked ? 'Sí' : 'No';
@@ -78,8 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Aquí normalmente enviarías los datos a un servidor o pasarías a la siguiente página
-        // Por ahora, solo mostraremos un resumen de la donación
         const summary = `
             Resumen de Donación:
             Frecuencia: ${selectedFrequency}
@@ -89,8 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
         alert(summary);
     });
-
-    // Función para actualizar el estilo de los botones seleccionados
+    
     function updateButtonStyles() {
         frequencyButtons.forEach(button => {
             button.addEventListener('click', function() {
