@@ -1,8 +1,10 @@
 document.getElementById('donationForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Evita que se envíe el formulario automáticamente
     
+    // Obtener los datos del formulario
     const formData = new FormData(event.target);
-
+    
+    // Convertir los datos del formulario a un objeto para almacenar
     const data = {};
     formData.forEach((value, key) => {
         data[key] = value;
@@ -13,7 +15,9 @@ document.getElementById('donationForm').addEventListener('submit', function(even
     donations.push(data);
     localStorage.setItem('donations', JSON.stringify(donations));
 
-    document.getElementById('result').innerHTML = '¡Gracias por tu donación!';
+    // Mostrar el resultado
+    document.getElementById('result').innerText = '¡Gracias por tu donación!';
     
+    // Limpiar el formulario
     event.target.reset();
 });
