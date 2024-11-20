@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         selectedAmount = customAmountInput.value;
     });
 
-    // Event listener para el botón "Next"
+    // Event listener para el botón "Siguiente"
     nextButton.addEventListener('click', () => {
         const currency = currencySelect.value;
         const comment = commentCheckbox.checked ? 'Sí' : 'No';
@@ -81,19 +81,3 @@ document.addEventListener('DOMContentLoaded', () => {
             Moneda: ${currency}
             Comentario: ${comment}
         `;
-        alert(summary);
-    });
-
-    // Función para actualizar el estilo de los botones seleccionados
-    function updateButtonStyles() {
-        const buttons = document.querySelectorAll('.frequency-select button, .amount-buttons button');
-        buttons.forEach(button => {
-            button.addEventListener('click', function() {
-                this.style.backgroundColor = '#ff6b6b';
-                this.style.color = '#fff';
-            });
-        });
-    }
-
-    updateButtonStyles();
-});
