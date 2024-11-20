@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextButton = document.querySelector('.next-btn');
     const commentCheckbox = document.getElementById('comments');
     
-    let selectedFrequency = 'Única';
+    let selectedFrequency = null;
     let selectedAmount = null;
 
     // Función para abrir el modal de donación
@@ -67,6 +67,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const currency = currencySelect.value;
         const comment = commentCheckbox.checked ? 'Sí' : 'No';
         const donationAmount = selectedAmount || customAmountInput.value;
+
+        if (!selectedFrequency) {
+            alert('Por favor, selecciona una frecuencia de donación.');
+            return;
+        }
 
         if (!donationAmount) {
             alert('Por favor, selecciona o ingresa un monto de donación.');
