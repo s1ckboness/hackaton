@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const donationModal = document.getElementById('donationModal');
     const closeBtn = document.querySelector('.close-btn');
     const contactLink = document.getElementById('contactLink');
+    const aboutLink = document.getElementById('aboutLink');
     const frequencyButtons = document.querySelectorAll('.frequency-select button');
     const amountButtons = document.querySelectorAll('.amount-buttons button');
     const customAmountInput = document.getElementById('custom-amount');
@@ -29,6 +30,13 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         const contactSection = document.getElementById('contactanos');
         contactSection.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Función para redirigir a la sección de acerca de
+    aboutLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        const aboutSection = document.getElementById('acerca-de');
+        aboutSection.scrollIntoView({ behavior: 'smooth' });
     });
 
     // Función para actualizar la selección de frecuencia
@@ -94,18 +102,4 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateButtonStyles() {
         frequencyButtons.forEach(button => {
             button.addEventListener('click', function() {
-                frequencyButtons.forEach(btn => btn.classList.remove('selected'));
-                this.classList.add('selected');
-            });
-        });
-
-        amountButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                amountButtons.forEach(btn => btn.classList.remove('selected'));
-                this.classList.add('selected');
-            });
-        });
-    }
-
-    updateButtonStyles();
-});
+                frequencyButtons.forEach(btn => btn.classList.remove('[_{{{CITATION{{{_1{](https://github.com/adamkss/quizio/tree/a942be78dedcf83f03cd28b4190e84638f857603/components%2FGenericDailog.js)
